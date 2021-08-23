@@ -15,7 +15,7 @@ const routes: Routes = [
   {
     path: 'books',
     loadChildren: () =>
-      import('./pages/books/books.module').then((m) => m.BooksModule),
+      import('./pages/book-shelf/book-shelf.module').then((m) => m.BookShelfModule),
     pathMatch: 'full'
   },
   {
