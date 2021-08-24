@@ -1,10 +1,16 @@
 import {Injectable} from "@angular/core";
 
 import {of} from "rxjs";
-import {catchError, map, switchMap} from "rxjs/operators";
+import {catchError, map, mergeMap, switchMap} from "rxjs/operators";
 import {Actions, createEffect, ofType} from "@ngrx/effects";
 
-import {actionAllBooksFail, actionAllBooksSuccess, actionGetBooks} from "./books.actions";
+import {
+  actionAllBooksFail,
+  actionAllBooksSuccess, actionDeleteBook,
+  actionDeleteBookFail,
+  actionDeleteBookSuccess,
+  actionGetBooks
+} from "./books.actions";
 
 import {BooksService} from "../../../shared/services/books.service";
 
@@ -23,7 +29,19 @@ export class BooksEffects {
           );
         })
       )
-  )
+  );
+  deleteBook = createEffect(
+    () =>
+      this.actions$.pipe(
+        ofType(actionDeleteBook),
+        mergeMap(({book}) => {
+          return this.booksService.deleteBook(book).pipe(
+            map(() => actionDeleteBookSuccess({id: book.id})),
+            catchError(error => of(actionDeleteBookFail({error: error, id: book.id})))
+          );
+        })
+      )
+  );
 
   constructor(private actions$: Actions, private booksService: BooksService) {
   }

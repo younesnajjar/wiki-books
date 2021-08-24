@@ -1,1 +1,57 @@
-<p>books works!</p>
+<p-card *ngIf="(getBooksState$ | async) as getBooksState">
+  <p-table #table *ngIf="books$ | async as books"
+           [loading]="getBooksState === loadingState.LOADING && books.length === 0" [value]="books" dataKey="id"
+           [globalFilterFields]="['title']"
+           [rows]="10" [showCurrentPageReport]="true"
+           [rowsPerPageOptions]="[10,25,50]" styleClass="p-datatable-customers"
+           [paginator]="true" currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries">
+    <ng-template pTemplate="caption">
+      <div class="flex align-items-center justify-content-between">
+        <div class="flex align-items-center">
+          <div class="refresh-loader-container text-center">
+            <i *ngIf="books.length > 0 && getBooksState === loadingState.LOADING"
+               class="pi pi-spin pi-spinner text-primary"></i>
+          </div>
+          <div class="text-center p-d-flex p-ai-center p-jc-between">
+            Available books list
+          </div>
+        </div>
+
+        <div class="flex justify-content-end">
+			<span class="p-input-icon-left p-ml-auto">
+                <i class="pi pi-search"></i>
+                <input pInputText type="text" (input)="table.filterGlobal($any($event.target).value, 'contains')"
+                       placeholder="Search keyword"/>
+            </span>
+        </div>
+      </div>
+
+    </ng-template>
+    <ng-template pTemplate="header">
+      <tr>
+        <th id="id">ID</th>
+        <th id="title">Title</th>
+        <th id="author">Author</th>
+        <th id="reviews">Reviews</th>
+        <th id="actions">Actions</th>
+      </tr>
+    </ng-template>
+    <ng-container *ngIf="(onDeleteBooksIDs$ | async) as onDeleteBooksIDS">
+      <ng-template pTemplate="body" let-book>
+        <tr>
+          <td>{{book.id}}</td>
+          <td>{{book.title}}
+          </td>
+          <td>{{book.author}}</td>
+          <td>
+            <p-rating [ngModel]="5" [readonly]="true" [cancel]="false"></p-rating>
+          </td>
+          <td>
+            <app-loadable-button (click)="deleteBook(book)" [loading]="onDeleteBooksIDS.includes(book.id)"
+                                 icon="pi pi-trash" class="p-button-rounded p-button-secondary"></app-loadable-button>
+          </td>
+        </tr>
+      </ng-template>
+    </ng-container>
+  </p-table>
+</p-card>

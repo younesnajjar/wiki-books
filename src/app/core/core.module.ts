@@ -9,6 +9,7 @@ import {HttpClientModule} from "@angular/common/http";
 import {StoreDevtoolsModule} from "@ngrx/store-devtools";
 import {environment} from "../../environments/environment";
 import {EffectsModule} from "@ngrx/effects";
+import {MenubarModule} from "primeng/menubar";
 
 
 @NgModule({
@@ -37,7 +38,8 @@ import {EffectsModule} from "@ngrx/effects";
     // primeng
     ToastModule,
     ToastModule,
-    TabMenuModule
+    TabMenuModule,
+    MenubarModule
   ]
 })
 export class CoreModule {

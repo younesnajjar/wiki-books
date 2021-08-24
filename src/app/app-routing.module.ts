@@ -15,13 +15,7 @@ const routes: Routes = [
   {
     path: 'books',
     loadChildren: () =>
-      import('./pages/book-shelf/book-shelf.module').then((m) => m.BookShelfModule),
-    pathMatch: 'full'
-  },
-  {
-    path: 'books/form',
-    loadChildren: () =>
-      import('./pages/form/form.module').then((m) => m.FormModule)
+      import('./pages/book-shelf/book-shelf.module').then((m) => m.BookShelfModule)
   },
   {
     path: '**',

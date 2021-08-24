@@ -1,0 +1,38 @@
+:host {
+  ::ng-deep .p-card {
+    margin: 2% 5%;
+
+    .p-card-body {
+      padding: 1px;
+
+      .p-card-content {
+        padding: 0;
+        th:first-child{
+          width: 80px;
+          text-align: center;
+        }
+        td:first-child {
+          text-align: center;
+        }
+        th:last-child {
+          width: 100px;
+          text-align: center;
+        }
+        td:last-child {
+          text-align: center;
+        }
+        button {
+          width: 35px;
+          height: 35px;
+        }
+
+        .refresh-loader-container {
+          width: 2.5rem;
+        }
+      }
+
+
+    }
+
+  }
+}

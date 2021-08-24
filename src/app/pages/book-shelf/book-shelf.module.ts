@@ -11,11 +11,13 @@ import {FEATURE_NAME, reducers} from "./book-shelf.state";
 
 import {StoreModule} from "@ngrx/store";
 import {EffectsModule} from "@ngrx/effects";
+import { BookFormComponent } from './books/components/book-form/book-form.component';
 
 
 @NgModule({
   declarations: [
-    BooksContainerComponent
+    BooksContainerComponent,
+    BookFormComponent
   ],
   imports: [
     CommonModule,
@@ -24,7 +26,7 @@ import {EffectsModule} from "@ngrx/effects";
     EffectsModule.forFeature([
       BooksEffects
     ]),
-    SharedModule
+    SharedModule,
   ]
 })
 export class BookShelfModule { }

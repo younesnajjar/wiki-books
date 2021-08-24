@@ -16,4 +16,8 @@ export class BooksService {
   getAllBooks(): Observable<Book[]> {
     return this.httpClient.get<Book[]>(urlEndPoints.books);
   }
+
+  deleteBook(book: Book) {
+    return this.httpClient.delete(urlEndPoints.books + book.id);
+  }
 }

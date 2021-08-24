@@ -12,17 +12,17 @@ import { AppComponent } from './app/app.component';
   declarations: [
     AppComponent
   ],
-  imports: [
-    // angular
-    BrowserAnimationsModule,
-    BrowserModule,
+    imports: [
+        // angular
+        BrowserModule,
+        BrowserAnimationsModule,
 
-    //core
-    CoreModule,
+        //core
+        CoreModule,
 
-    // app
-    AppRoutingModule
-  ],
+        // app
+        AppRoutingModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

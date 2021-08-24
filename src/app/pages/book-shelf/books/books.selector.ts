@@ -11,3 +11,11 @@ export const selectBooks = createSelector(
   selectBooksState,
   (state) => state.items
 )
+export const selectGetBooksState = createSelector(
+  selectBooksState,
+  (state) => state.callState
+)
+export const selectOnDeleteBooks = createSelector(
+  selectBooksState,
+  (state) => state.onDeleteItems
+);

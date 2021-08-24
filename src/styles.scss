@@ -2,4 +2,12 @@
 
 body {
   margin: 0;
+  background: var(--gray-50);
+}
+.p-card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4) !important;
+  transition: 0.3s;
+}
+.p-card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4) !important;
 }
