@@ -42,9 +42,9 @@
           <td>{{book.id}}</td>
           <td>{{book.title}}
           </td>
-          <td>{{book.author}}</td>
+          <td>{{book.author ? book.author.name : 'Unknown'}}</td>
           <td>
-            <p-rating [ngModel]="5" [readonly]="true" [cancel]="false"></p-rating>
+            <p-rating [ngModel]="book.rating" [readonly]="true" [cancel]="false"></p-rating>
           </td>
           <td>
             <app-loadable-button (click)="deleteBook(book)" [loading]="onDeleteBooksIDS.includes(book.id)"

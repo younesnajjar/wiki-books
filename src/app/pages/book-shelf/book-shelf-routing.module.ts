@@ -2,7 +2,7 @@ import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 
 import {BooksContainerComponent} from "./books/components/books-container.component";
-import {BookFormComponent} from "./books/components/book-form/book-form.component";
+import {BookFormComponent} from "./book-form/components/book-form.component";
 
 const routes: Routes = [
   {

@@ -7,12 +7,15 @@ import * as booksAction from "./books.actions";
 export const initialState: BooksState = {
   items: [],
   callState: LoadingState.INIT,
-  onDeleteItems: []
+  onDeleteItems: [],
+  bookOnCreation: false
 }
 
 
 const reducer = createReducer(
   initialState,
+
+  /***** @Get Books section *****/
   on(booksAction.actionGetBooks, (state) => ({
       ...state,
       callState: LoadingState.LOADING
@@ -29,6 +32,8 @@ const reducer = createReducer(
       callState: {errorMsg: error.errorMsg}
     }),
   ),
+
+  /***** @Delete Book section *****/
   on(booksAction.actionDeleteBook, (state, {book}) => ({
       ...state,
       onDeleteItems: [...state.onDeleteItems, book.id]
@@ -36,13 +41,31 @@ const reducer = createReducer(
   ),
   on(booksAction.actionDeleteBookSuccess, (state, {id}) => ({
       ...state,
-      items: state.items.filter(item => item.id !== id ),
+      items: state.items.filter(item => item.id !== id),
       onDeleteItems: state.onDeleteItems.filter(itemId => itemId !== id)
     }),
   ),
   on(booksAction.actionDeleteBookFail, (state, {error, id}) => ({
       ...state,
       onDeleteItems: state.onDeleteItems.filter(itemId => itemId !== id)
+    }),
+  ),
+
+  /***** @Add One Book section *****/
+  on(booksAction.actionAddBook, (state) => ({
+      ...state,
+      bookOnCreation: true
+    }),
+  ),
+  on(booksAction.actionAddBookSuccess, (state, {book}) => ({
+      ...state,
+      items: [...state.items, book],
+      bookOnCreation: false
+    }),
+  ),
+  on(booksAction.actionAddBookFail, (state, ) => ({
+      ...state,
+      bookOnCreation: false
     }),
   ),
 )

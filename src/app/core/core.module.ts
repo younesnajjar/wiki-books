@@ -10,6 +10,7 @@ import {StoreDevtoolsModule} from "@ngrx/store-devtools";
 import {environment} from "../../environments/environment";
 import {EffectsModule} from "@ngrx/effects";
 import {MenubarModule} from "primeng/menubar";
+import {RouterModule} from "@angular/router";
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import {MenubarModule} from "primeng/menubar";
     // angular
     CommonModule,
     HttpClientModule,
+    RouterModule,
 
     // primeng
     ToastModule,

@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import {StoreModule} from "@ngrx/store";
+import {EffectsModule} from "@ngrx/effects";
 
 import { BooksContainerComponent } from './books/components/books-container.component';
 
@@ -9,9 +11,10 @@ import { BookShelfRoutingModule } from './book-shelf-routing.module';
 import {BooksEffects} from "./books/books.effects";
 import {FEATURE_NAME, reducers} from "./book-shelf.state";
 
-import {StoreModule} from "@ngrx/store";
-import {EffectsModule} from "@ngrx/effects";
-import { BookFormComponent } from './books/components/book-form/book-form.component';
+
+import { BookFormComponent } from './book-form/components/book-form.component';
+import {FormEffects} from "./book-form/form.effects";
+import {AuthorsEffects} from "./authors/authors.effects";
 
 
 @NgModule({
@@ -24,9 +27,11 @@ import { BookFormComponent } from './books/components/book-form/book-form.compon
     BookShelfRoutingModule,
     StoreModule.forFeature(FEATURE_NAME, reducers),
     EffectsModule.forFeature([
-      BooksEffects
+      BooksEffects,
+      FormEffects,
+      AuthorsEffects
     ]),
-    SharedModule,
+    SharedModule
   ]
 })
 export class BookShelfModule { }
