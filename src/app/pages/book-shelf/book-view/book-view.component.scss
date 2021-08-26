@@ -1,0 +1,73 @@
+:host ::ng-deep .book-container {
+  margin: 2% 5%;
+
+  .p-card {
+    border-radius: 10px;
+  }
+
+  .title-card {
+    .p-card {
+      background: var(--surface-800);
+
+      .p-card-body {
+        color: var(--yellow-500);
+        font-weight: 800;
+        padding: 2px;
+      }
+    }
+  }
+
+  .info-container {
+    display: flex;
+    align-items: stretch;
+    gap: 20px;
+
+    .cover-card {
+      width: 300px;
+
+      .p-card {
+        height: 100%;
+
+        .p-card-body {
+          padding: 10px 0;
+
+          img {
+            width: 240px;
+          }
+        }
+      }
+    }
+
+    .details-card {
+      flex: 1;
+
+      .p-card {
+        height: 100%;
+
+        .p-rating-icon {
+          font-size: 1.5rem;
+          color: var(--yellow-500);
+        }
+
+        .details-lines {
+          display: flex;
+
+          > div {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+
+            span {
+              display: inline-block;
+              font-weight: bold;
+              width: 100px;
+            }
+          }
+
+        }
+      }
+
+    }
+  }
+
+}
