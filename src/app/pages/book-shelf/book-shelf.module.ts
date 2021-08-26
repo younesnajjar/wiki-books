@@ -9,33 +9,21 @@ import {SharedModule} from "../../shared/shared.module";
 
 import { BookShelfRoutingModule } from './book-shelf-routing.module';
 import {BooksEffects} from "./books/books.effects";
-import {FEATURE_NAME, reducers} from "./book-shelf.state";
+import {BOOK_SHELF_FEATURE_NAME, bookShelfReducers} from "./book-shelf.state";
 
-
-import { BookFormComponent } from './book-form/components/book-form.component';
-import {FormEffects} from "./book-form/form.effects";
-import {AuthorsEffects} from "./authors/authors.effects";
 import { BookViewComponent } from './book-view/book-view.component';
-import { ComponentsComponent } from './authors/components/components.component';
-import { AuthorComponent } from './authors/components/author/author.component';
-
 
 @NgModule({
   declarations: [
     BooksContainerComponent,
-    BookFormComponent,
-    BookViewComponent,
-    ComponentsComponent,
-    AuthorComponent
+    BookViewComponent
   ],
   imports: [
     CommonModule,
     BookShelfRoutingModule,
-    StoreModule.forFeature(FEATURE_NAME, reducers),
+    StoreModule.forFeature(BOOK_SHELF_FEATURE_NAME, bookShelfReducers),
     EffectsModule.forFeature([
-      BooksEffects,
-      FormEffects,
-      AuthorsEffects
+      BooksEffects
     ]),
     SharedModule
   ]
