@@ -3,7 +3,7 @@ import {Observable} from "rxjs";
 import {HttpClient} from "@angular/common/http";
 
 import {urlEndPoints} from "../../config/end-points.const";
-import {Author} from "../../../pages/book-shelf/authors/authors.model";
+import {Author} from "../../../pages/authors-space/authors/authors.model";
 
 @Injectable({
   providedIn: 'root'

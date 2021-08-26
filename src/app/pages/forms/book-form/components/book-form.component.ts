@@ -6,13 +6,13 @@ import {debounceTime, take} from "rxjs/operators";
 
 import {State} from "../../../book-shelf/book-shelf.state";
 import {actionFormReset, actionFormUpdate, actionGetBookExistence} from "../form.actions";
-import {selectBookExistence, selectFormState} from "../form.selector";
+import {selectBookExistence, selectFormState} from "../form.selectors";
 import {Form} from "../form.model";
 import {actionAddBook} from "../../../book-shelf/books/books.actions";
 import {selectBookOnCreation} from "../../../book-shelf/books/books.selector";
-import {actionAllAuthors} from "../../../book-shelf/authors/authors.actions";
-import {Author} from "../../../book-shelf/authors/authors.model";
-import {selectAuthors} from "../../../book-shelf/authors/authors.selector";
+import {actionAllAuthors} from "../../../authors-space/authors/authors.actions";
+import {Author} from "../../../authors-space/authors/authors.model";
+import {selectAuthors} from "../../../authors-space/authors/authors.selector";
 
 @Component({
   selector: 'app-book-form',

@@ -18,6 +18,11 @@ const routes: Routes = [
       import('./pages/forms/forms.module').then((m) => m.FormsModule)
   },
   {
+    path: 'authors',
+    loadChildren: () =>
+      import('./pages/authors-space/authors-space.module').then((m) => m.AuthorsSpaceModule)
+  },
+  {
     path: 'books',
     loadChildren: () =>
       import('./pages/book-shelf/book-shelf.module').then((m) => m.BookShelfModule)

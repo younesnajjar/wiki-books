@@ -1,10 +1,10 @@
 import {createSelector} from "@ngrx/store";
 
-import {selectBookShelf} from "../book-shelf.state";
+import {selectAuthorsSpace} from "../authors-space.state";
 
 
 export const selectAuthorsState = createSelector(
-  selectBookShelf,
+  selectAuthorsSpace,
   (state) => state.authors
 );
 export const selectAuthors = createSelector(

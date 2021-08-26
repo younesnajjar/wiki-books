@@ -2,25 +2,22 @@ import {ActionReducerMap, createFeatureSelector} from "@ngrx/store";
 
 import {BooksState} from "./books/books.model";
 import {booksReducer} from "./books/books.reducer";
-import {FormState} from "../forms/book-form/form.model";
-import {AuthorsState} from "./authors/authors.model";
-import {authorsReducer} from "./authors/authors.reducer";
+import {AuthorsState} from "../authors-space/authors/authors.model";
 import {FormsState} from "../forms/forms.state";
 
-export const FEATURE_NAME = 'bookShelf';
+export const BOOK_SHELF_FEATURE_NAME = 'bookShelf';
 export const selectBookShelf =
-  createFeatureSelector<State, BookShelfState>(FEATURE_NAME);
-export const reducers: ActionReducerMap<BookShelfState> = {
+  createFeatureSelector<State, BookShelfState>(BOOK_SHELF_FEATURE_NAME);
+export const bookShelfReducers: ActionReducerMap<BookShelfState> = {
   books: booksReducer,
-  authors: authorsReducer
 };
 
 export interface BookShelfState {
   books: BooksState;
-  authors: AuthorsState
 }
 
 export interface State {
   bookShelf: BookShelfState;
+  authorsSpace: AuthorsState
   forms: FormsState;
 }
