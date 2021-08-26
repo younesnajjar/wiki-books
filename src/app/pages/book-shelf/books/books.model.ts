@@ -1,5 +1,5 @@
 import {CallState} from "../../../shared/models/call-state.model";
-import {Form} from "../book-form/form.model";
+import {Form} from "../../forms/book-form/form.model";
 import {Author} from "../authors/authors.model";
 
 export interface Book {

@@ -1,9 +1,9 @@
-import {selectBookShelf} from "../book-shelf.state";
 import {createSelector} from "@ngrx/store";
+import {selectForms} from "../forms.state";
 
 
 export const selectFormState = createSelector(
-  selectBookShelf,
+  selectForms,
   (state) => state.form
 );
 

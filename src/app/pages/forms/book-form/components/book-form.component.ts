@@ -4,15 +4,15 @@ import {select, Store} from "@ngrx/store";
 import {Observable, Subscription} from "rxjs";
 import {debounceTime, take} from "rxjs/operators";
 
-import {State} from "../../book-shelf.state";
+import {State} from "../../../book-shelf/book-shelf.state";
 import {actionFormReset, actionFormUpdate, actionGetBookExistence} from "../form.actions";
 import {selectBookExistence, selectFormState} from "../form.selector";
 import {Form} from "../form.model";
-import {actionAddBook} from "../../books/books.actions";
-import {selectBookOnCreation} from "../../books/books.selector";
-import {actionAllAuthors} from "../../authors/authors.actions";
-import {Author} from "../../authors/authors.model";
-import {selectAuthors} from "../../authors/authors.selector";
+import {actionAddBook} from "../../../book-shelf/books/books.actions";
+import {selectBookOnCreation} from "../../../book-shelf/books/books.selector";
+import {actionAllAuthors} from "../../../book-shelf/authors/authors.actions";
+import {Author} from "../../../book-shelf/authors/authors.model";
+import {selectAuthors} from "../../../book-shelf/authors/authors.selector";
 
 @Component({
   selector: 'app-book-form',

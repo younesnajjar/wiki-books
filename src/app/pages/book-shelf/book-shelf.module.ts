@@ -12,8 +12,7 @@ import {BooksEffects} from "./books/books.effects";
 import {FEATURE_NAME, reducers} from "./book-shelf.state";
 
 
-import { BookFormComponent } from './book-form/components/book-form.component';
-import {FormEffects} from "./book-form/form.effects";
+import {FormEffects} from "../forms/book-form/form.effects";
 import {AuthorsEffects} from "./authors/authors.effects";
 import { BookViewComponent } from './book-view/book-view.component';
 import { ComponentsComponent } from './authors/components/components.component';
@@ -23,7 +22,6 @@ import { AuthorComponent } from './authors/components/author/author.component';
 @NgModule({
   declarations: [
     BooksContainerComponent,
-    BookFormComponent,
     BookViewComponent,
     ComponentsComponent,
     AuthorComponent

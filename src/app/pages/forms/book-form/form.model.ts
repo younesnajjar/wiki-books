@@ -1,4 +1,4 @@
-import {Book} from "../books/books.model";
+import {Book} from "../../book-shelf/books/books.model";
 
 
 export interface FormState {
