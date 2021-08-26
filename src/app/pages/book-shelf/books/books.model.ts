@@ -13,6 +13,7 @@ export interface Book {
 export interface BooksState {
   items: Book[];
   callState: CallState;
+  selectedItem: Book | null;
   onDeleteItems: number[],
   bookOnCreation: boolean,
 }

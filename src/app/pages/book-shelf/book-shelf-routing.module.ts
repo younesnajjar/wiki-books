@@ -3,6 +3,8 @@ import {RouterModule, Routes} from '@angular/router';
 
 import {BooksContainerComponent} from "./books/components/books-container.component";
 import {BookFormComponent} from "./book-form/components/book-form.component";
+import {BookViewComponent} from "./book-view/book-view.component";
+
 
 const routes: Routes = [
   {
@@ -13,7 +15,10 @@ const routes: Routes = [
   {
     path: 'form',
     component: BookFormComponent,
-    pathMatch: 'full'
+  },
+  {
+    path: ':id',
+    component: BookViewComponent,
   },
 ];
 

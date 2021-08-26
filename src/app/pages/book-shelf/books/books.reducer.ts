@@ -7,6 +7,7 @@ import * as booksAction from "./books.actions";
 export const initialState: BooksState = {
   items: [],
   callState: LoadingState.INIT,
+  selectedItem: null,
   onDeleteItems: [],
   bookOnCreation: false
 }
@@ -64,6 +65,22 @@ const reducer = createReducer(
     }),
   ),
   on(booksAction.actionAddBookFail, (state, ) => ({
+      ...state,
+      bookOnCreation: false
+    }),
+  ),
+  on(booksAction.actionGetBook, (state) => ({
+      ...state,
+      bookOnCreation: true
+    }),
+  ),
+  on(booksAction.actionGetBookSuccess, (state, {book}) => ({
+      ...state,
+      items: [...state.items, book],
+      bookOnCreation: false
+    }),
+  ),
+  on(booksAction.actionGetBookFail, (state, ) => ({
       ...state,
       bookOnCreation: false
     }),

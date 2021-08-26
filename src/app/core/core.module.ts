@@ -11,6 +11,7 @@ import {environment} from "../../environments/environment";
 import {EffectsModule} from "@ngrx/effects";
 import {MenubarModule} from "primeng/menubar";
 import {RouterModule} from "@angular/router";
+import {routerReducer, StoreRouterConnectingModule} from "@ngrx/router-store";
 
 
 @NgModule({
@@ -26,13 +27,19 @@ import {RouterModule} from "@angular/router";
     TabMenuModule,
 
     // ngrx
-    StoreModule.forRoot({}),
+    StoreModule.forRoot({
+      router: routerReducer
+    }),
     EffectsModule.forRoot([]),
     environment.production
       ? []
       : StoreDevtoolsModule.instrument({
         name: 'WikiBooks' // Redux Dev Tools
       }),
+    StoreRouterConnectingModule.forRoot({
+      stateKey: 'router',
+      routerState: 1
+    }),
   ],
   providers: [MessageService],
   exports: [
