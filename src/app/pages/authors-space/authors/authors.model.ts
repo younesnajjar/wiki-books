@@ -3,8 +3,10 @@ import {Book} from "../../book-shelf/books/books.model";
 
 export interface Author {
   id: number;
-  name: string;
+  fullName: string;
   description: string;
+  email: string;
+  pictureUrl: string;
 }
 
 export interface AuthorsState {

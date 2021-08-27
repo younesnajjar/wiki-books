@@ -8,6 +8,7 @@ export interface Book {
   description: string;
   authorId: number;
   author: Author;
+  coverUrl: string;
 }
 
 export interface BooksState {
