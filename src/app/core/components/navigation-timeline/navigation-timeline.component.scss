@@ -1,9 +1,5 @@
 @import "../../../../styles/scroll.styles";
 
-.checked {
-  width: 250px !important;
-}
-
 
 :host ::ng-deep .navigation-timeline-container {
   background: var(--surface-0);
@@ -24,6 +20,7 @@
     top: 0;
   }
 
+
   .display-none {
     display: none;
   }
@@ -43,6 +40,15 @@
     color: var(--gray-700);
     font-size: 0.7rem;
   }
-
-
 }
+
+@media (min-width: 961px) {
+  .checked {
+    width: 250px !important;
+  }
+  .checked-flex {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+}
+

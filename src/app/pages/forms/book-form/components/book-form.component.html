@@ -1,73 +1,76 @@
-<p-card>
-  <ng-container *ngIf="formValueChanges$ | async as updatedForm">
-    {{update(updatedForm)}}
-  </ng-container>
-  <form [formGroup]="form">
-    <div class="p-fluid">
-      <div class="grid col">
+<div class="flex flex-1">
+  <p-card class="mr-auto ml-auto">
+    <ng-container *ngIf="formValueChanges$ | async as updatedForm">
+      {{update(updatedForm)}}
+    </ng-container>
+    <form [formGroup]="form">
+      <div class="p-fluid">
+        <div class="grid col">
         <span class="p-field p-float-label col-3">
           <input [ngClass]="{'ng-dirty ng-invalid ng-touched': bookExistence$ | async}" pInputText id="Id"
                  formControlName="id" type="text" (input)="checkExistence($event)">
           <label for="id">ID</label>
           <small class="p-error"
                  *ngIf="!form.controls['id'].valid && form.controls['id'].dirty">Required</small>
-          <small class="p-error" *ngIf="bookExistence$ | async as bookExistence">Id already in use</small>
+          <small class="p-error" *ngIf="bookExistence$ | async">Id already in use</small>
         </span>
-        <span class="p-field p-float-label col">
+          <span class="p-field p-float-label col">
           <input pInputText id="title" formControlName="title" type="text">
           <label for="title">Title</label>
           <small class="p-error"
-                 *ngIf="!form.controls['title'].valid&& form.controls['title'].dirty">Required</small>
+                 *ngIf="!form.controls['title'].valid && form.controls['title'].dirty">Required</small>
         </span>
+        </div>
+
+        <div class="grid col">
+          <div class="p-field col-9">
+            <p-dropdown formControlName="author" [options]="$any(authors$ | async)" optionLabel="fullName" [filter]="true"
+                        filterBy="fullName"
+                        placeholder="Select an author">
+              <ng-template pTemplate="selectedItem">
+                <div class="country-item country-item-value">
+                  <div>{{form.controls['author'].value.fullName}}</div>
+                </div>
+              </ng-template>
+              <ng-template let-author pTemplate="item">
+                <div class="country-item">
+                  <div>{{author.fullName}}</div>
+                </div>
+              </ng-template>
+            </p-dropdown>
+            <small class="p-error"
+                   *ngIf="!form.controls['author'].valid && form.controls['author'].dirty">Required</small>
+          </div>
+          <div class="p-float-label field col-3">
+            <p-inputNumber id="rating" formControlName="rating" [min]="0" [max]="5"
+                           mode="decimal"></p-inputNumber>
+            <label for="rating">Rating</label>
+          </div>
+        </div>
+        <div class="p-field p-float-label col">
+          <input pInputText id="coverUrl" formControlName="coverUrl" type="text">
+          <label for="title">Cover Url</label>
+        </div>
+        <div class="p-field p-float-label col">
+          <textarea formControlName="description" pInputTextarea id="description"></textarea>
+          <label for="description">Description</label>
+          <small class="p-error" *ngIf="!form.controls['description'].valid && form.controls['description'].dirty">
+            Min 10 Characters
+          </small>
+        </div>
+        <div class="grid col">
+          <div class="col-8">
+            <button [disabled]="this.form.invalid" (click)="submit()" pButton class="p-button-info" label="Submit"
+                    [icon]="'pi ' +  (( bookOnCreation$ | async) ? 'pi-spin pi-spinner' : 'pi-check')"
+                    iconPos="right"></button>
+          </div>
+          <div class="col-4">
+            <button (click)="reset()" pButton label="Reset" icon="pi pi-undo" iconPos="right"></button>
+          </div>
+        </div>
       </div>
 
-      <div class="grid col">
-        <div class="p-field col-9">
-          <p-dropdown formControlName="author" [options]="$any(authors$ | async)" optionLabel="fullName" [filter]="true"
-                      filterBy="fullName"
-                      placeholder="Select an author">
-            <ng-template pTemplate="selectedItem">
-              <div class="country-item country-item-value">
-                <div>{{form.controls['author'].value.fullName}}</div>
-              </div>
-            </ng-template>
-            <ng-template let-author pTemplate="item">
-              <div class="country-item">
-                <div>{{author.fullName}}</div>
-              </div>
-            </ng-template>
-          </p-dropdown>
-          <small class="p-error"
-                 *ngIf="!form.controls['author'].valid && form.controls['author'].dirty">Required</small>
-        </div>
-        <div class="p-float-label field col-3">
-          <p-inputNumber id="rating" formControlName="rating" [min]="0" [max]="5"
-                         mode="decimal"></p-inputNumber>
-          <label for="rating">Rating</label>
-        </div>
-      </div>
-      <div class="p-field p-float-label col">
-        <input pInputText id="coverUrl" formControlName="coverUrl" type="text">
-        <label for="title">Cover Url</label>
-      </div>
-      <div class="p-field p-float-label col">
-        <textarea formControlName="description" pInputTextarea id="description"></textarea>
-        <label for="description">Description</label>
-        <small class="p-error" *ngIf="!form.controls['description'].valid && form.controls['description'].dirty">
-          Min 10 Characters
-        </small>
-      </div>
-      <div class="grid col">
-        <div class="col-8">
-          <button [disabled]="this.form.invalid" (click)="submit()" pButton class="p-button-info" label="Submit"
-                  [icon]="'pi ' +  (( bookOnCreation$ | async) ? 'pi-spin pi-spinner' : 'pi-check')"
-                  iconPos="right"></button>
-        </div>
-        <div class="col-4">
-          <button (click)="reset()" pButton label="Reset" icon="pi pi-undo" iconPos="right"></button>
-        </div>
-      </div>
-    </div>
+    </form>
+  </p-card>
 
-  </form>
-</p-card>
+</div>

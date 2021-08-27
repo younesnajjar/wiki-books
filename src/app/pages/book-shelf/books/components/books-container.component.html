@@ -6,18 +6,18 @@
            [rowsPerPageOptions]="[10,25,50]" styleClass="p-datatable-customers"
            [paginator]="true" currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries">
     <ng-template pTemplate="caption">
-      <div class="flex align-items-center justify-content-between">
-        <div class="flex align-items-center">
-          <div class="refresh-loader-container text-center">
+      <div class="align-items-center flex flex-wrap justify-content-between m-1">
+        <div class="flex align-items-center flex-1">
+          <div class="refresh-loader-container text-center max-w-0 sm:max-w-full">
             <i *ngIf="books.length > 0 && getBooksState === loadingState.LOADING"
                class="pi pi-spin pi-spinner text-primary"></i>
           </div>
-          <div class="text-center p-d-flex p-ai-center p-jc-between">
+          <div class="text-center flex-1">
             Available books list
           </div>
         </div>
 
-        <div class="flex justify-content-end">
+        <div class="flex justify-content-end flex-1 justify-content-center sm:justify-content-end">
 			<span class="p-input-icon-left p-ml-auto">
                 <i class="pi pi-search"></i>
                 <input pInputText type="text" (input)="table.filterGlobal($any($event.target).value, 'contains')"
@@ -38,10 +38,12 @@
     </ng-template>
     <ng-container *ngIf="(onDeleteBooksIDs$ | async) as onDeleteBooksIDS">
       <ng-template pTemplate="body" let-book>
-        <tr>
-          <td>{{book.id}}</td>
+        <tr class="table-body-tr">
+          <td><div>{{book.id}}</div></td>
           <td><span class="cursor-pointer" [routerLink]="['/books',book?.id]">{{book.title}}</span></td>
-          <td><span class="cursor-pointer" [routerLink]="['/authors',book?.author?.id]">{{book.author ? book.author.fullName : 'Unknown'}}</span></td>
+          <td><span class="cursor-pointer"
+                    [routerLink]="['/authors',book?.author?.id]">{{book.author ? book.author.fullName : 'Unknown'}}</span>
+          </td>
           <td>
             <p-rating [ngModel]="book.rating" [readonly]="true" [cancel]="false"></p-rating>
           </td>
@@ -53,7 +55,8 @@
       </ng-template>
       <ng-template pTemplate="emptymessage">
         <tr>
-          <td colspan="5">{{getBooksState.toString() === getBooksState ? 'No books found.' : 'An error had occurred, please try again'}}</td>
+          <td
+            colspan="5">{{getBooksState.toString() === getBooksState ? 'No books found.' : 'An error had occurred, please try again'}}</td>
         </tr>
       </ng-template>
     </ng-container>

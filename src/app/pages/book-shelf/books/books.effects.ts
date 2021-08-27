@@ -17,6 +17,7 @@ import {BooksService} from "../../../shared/services/books/books.service";
 import {Book, getBookRequestBody} from "./books.model";
 import {Router} from "@angular/router";
 import {NotificationService} from "../../../core/notifications/notification.service";
+import {actionFormReset} from "../../forms/book-form/form.actions";
 
 
 @Injectable()
@@ -56,7 +57,9 @@ export class BooksEffects {
             tap(() => this.router.navigate(['/books'])),
             tap(() => this.notificationService.success('Book created successfully')),
             mergeMap((returnedBook: Book) => [
-              actionAddBookSuccess({book: (returnedBook)})]),
+              actionAddBookSuccess({book: (returnedBook)}),
+              actionFormReset()
+            ]),
             catchError(error => of(actionAddBookFail({error})))
           );
         })

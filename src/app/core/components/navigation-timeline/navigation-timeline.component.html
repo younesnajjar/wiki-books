@@ -10,7 +10,7 @@
         </span>
     </ng-template>
     <ng-template pTemplate="content" let-item>
-      <div [routerLink]="item.url"  [ngClass]="{'display-none': !showDetails, 'flex flex-column': showDetails}" class="w-full cursor-pointer">
+      <div [routerLink]="item.url"  [ngClass]="{'checked-flex': showDetails}" class="w-full cursor-pointer display-none">
         <span class="font-bold">{{item.name}} Page</span>
         <span class="font-italic url-text mt-1">{{item.url}}</span>
       </div>

@@ -1,0 +1,23 @@
+.cards-container {
+  gap: 20px;
+  p-card{
+    opacity: 60%;
+    width: 350px;
+    ::ng-deep .p-card-body {
+      height: 230px;
+    }
+    .paragraph {
+      height: 40px;
+    }
+    .icons-container {
+      gap: 10px;
+    }
+    a {
+      text-decoration: none;
+      color: var(--gray-900)
+    }
+  }
+  p-card:hover {
+    opacity: 80%;
+  }
+}

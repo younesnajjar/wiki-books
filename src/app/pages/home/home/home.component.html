@@ -1,1 +1,14 @@
-<p>home works!</p>
+<div class="flex flex-column m-3">
+  <h1>Features</h1>
+  <div class="flex flex-wrap justify-content-around cards-container">
+    <p-card [header]="feature.name" *ngFor="let feature of features">
+      <p class="paragraph">{{feature.description}}</p>
+      <ng-template pTemplate="footer">
+        <div class="icons-container flex">
+          <a [href]="feature.github" target="_blank"><i class="pi pi-github" style="font-size: 1.5rem"></i></a>
+          <a [href]="feature.documentation" target="_blank"><i class="pi pi-book" style="font-size: 1.5rem"></i></a>
+        </div>
+      </ng-template>
+    </p-card>
+  </div>
+</div>
