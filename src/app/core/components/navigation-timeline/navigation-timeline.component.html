@@ -1,0 +1,19 @@
+<div [ngClass]="{'checked': showDetails}" class="navigation-timeline-container shadow-2 pt-3 overflow-scroll">
+  <div class="text-center">
+    <p-checkbox class="mb-5" [(ngModel)]="showDetails" pTooltip="Show details" [binary]="true"></p-checkbox>
+  </div>
+  <p-timeline *ngIf="navigationHistoryList$ | async as navigationHistoryList" [value]="navigationHistoryList">
+    <ng-template pTemplate="marker" let-item>
+			  <span [pTooltip]="item.name + ' Page'" class="custom-marker p-shadow-2"
+              [style.backgroundColor]="'var(' + item.color + ')'">
+                <i [ngClass]="item.icon"></i>
+        </span>
+    </ng-template>
+    <ng-template pTemplate="content" let-item>
+      <div [ngClass]="{'display-none': !showDetails, 'flex flex-column': showDetails}" class="w-full">
+        <span class="font-bold">{{item.name}} Page</span>
+        <span class="font-italic url-text mt-1">{{item.url}}</span>
+      </div>
+    </ng-template>
+  </p-timeline>
+</div>

@@ -1,0 +1,45 @@
+.checked {
+  width: 250px !important;
+}
+
+
+:host ::ng-deep .navigation-timeline-container {
+  background: var(--surface-0);
+  height: 100%;
+
+  .p-timeline-event-opposite, .p-timeline-event-content {
+    padding: 0.5rem !important;
+    margin-right: 0.25rem;
+  }
+
+  .p-timeline-event-opposite {
+    flex: 0
+  }
+
+  .details-toggle {
+    position: absolute;
+    top: 0;
+  }
+
+  .display-none {
+    display: none;
+  }
+
+  .custom-marker {
+    display: flex;
+    width: 2rem;
+    height: 2rem;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    border-radius: 50%;
+    z-index: 1;
+  }
+
+  .url-text {
+    color: var(--gray-700);
+    font-size: 0.7rem;
+  }
+
+
+}
