@@ -1,3 +1,8 @@
 <p-toast position="bottom-center"></p-toast>
-<p-tabMenu [model]="items" ></p-tabMenu>
-<router-outlet></router-outlet>
+<div class="flex w-full">
+  <div class="flex-1">
+    <p-tabMenu [model]="items" ></p-tabMenu>
+    <router-outlet></router-outlet>
+  </div>
+  <app-navigation-timeline class="timeline"></app-navigation-timeline>
+</div>

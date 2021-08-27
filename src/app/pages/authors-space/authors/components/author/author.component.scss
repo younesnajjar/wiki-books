@@ -1,0 +1,34 @@
+:host {
+  .author-container {
+    margin: 2% 5%;
+
+    gap: 10px;
+
+    .author-pic-container {
+      img {
+        border-radius: 5px;
+        border: 3px solid var(--yellow-600);
+      }
+    }
+
+
+    .author-books-container {
+      gap: 20px;
+      ::ng-deep .p-card {
+        height: 100%;
+      }
+      p-card {
+        width: 232px;
+        img {
+          width: 200px;
+          height: 300px;
+          border-radius: 3px;
+          border: 2px solid var(--cyan-600);
+        }
+      }
+
+
+
+    }
+  }
+}

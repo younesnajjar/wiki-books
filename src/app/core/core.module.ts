@@ -1,21 +1,39 @@
 import {NgModule, Optional, SkipSelf} from '@angular/core';
 import {CommonModule} from '@angular/common';
+import {HttpClientModule} from "@angular/common/http";
+import {FormsModule} from "@angular/forms";
+
+
+import {StoreModule} from "@ngrx/store";
+import {StoreDevtoolsModule} from "@ngrx/store-devtools";
 
 import {TabMenuModule} from 'primeng/tabmenu';
 import {ToastModule} from 'primeng/toast';
 import {MessageService} from "primeng/api";
-import {StoreModule} from "@ngrx/store";
-import {HttpClientModule} from "@angular/common/http";
-import {StoreDevtoolsModule} from "@ngrx/store-devtools";
-import {environment} from "../../environments/environment";
-import {EffectsModule} from "@ngrx/effects";
 import {MenubarModule} from "primeng/menubar";
+import {CheckboxModule} from "primeng/checkbox";
+import {TimelineModule} from "primeng/timeline";
+import {CardModule} from "primeng/card";
+import {ButtonModule} from "primeng/button";
+
+
+
 import {RouterModule} from "@angular/router";
+import {EffectsModule} from "@ngrx/effects";
 import {routerReducer, StoreRouterConnectingModule} from "@ngrx/router-store";
+
+import { NavigationTimelineComponent } from './components/navigation-timeline/navigation-timeline.component';
+import {NavigationHistoryEffects} from "./store/history/navigation-history/navigation-history.effects";
+import {HISTORY_FEATURE_NAME, historyReducers} from "./store/history/history.state";
+
+
+import {environment} from "../../environments/environment";
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    NavigationTimelineComponent
+  ],
   imports: [
     // angular
     CommonModule,
@@ -25,12 +43,20 @@ import {routerReducer, StoreRouterConnectingModule} from "@ngrx/router-store";
     // primeng
     ToastModule,
     TabMenuModule,
+    TimelineModule,
+    CardModule,
+    ButtonModule,
+    FormsModule,
+    CheckboxModule,
 
     // ngrx
     StoreModule.forRoot({
       router: routerReducer
     }),
-    EffectsModule.forRoot([]),
+    StoreModule.forFeature(HISTORY_FEATURE_NAME, historyReducers),
+    EffectsModule.forRoot([
+      NavigationHistoryEffects
+    ]),
     environment.production
       ? []
       : StoreDevtoolsModule.instrument({
@@ -46,9 +72,9 @@ import {routerReducer, StoreRouterConnectingModule} from "@ngrx/router-store";
 
     // primeng
     ToastModule,
-    ToastModule,
     TabMenuModule,
-    MenubarModule
+    MenubarModule,
+    NavigationTimelineComponent
   ]
 })
 export class CoreModule {
