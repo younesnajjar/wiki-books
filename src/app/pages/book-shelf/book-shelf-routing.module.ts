@@ -3,7 +3,7 @@ import {RouterModule, Routes} from '@angular/router';
 
 import {BooksContainerComponent} from "./books/components/books-container.component";
 import {BookFormComponent} from "../forms/book-form/components/book-form.component";
-import {BookViewComponent} from "./book-view/book-view.component";
+import {BookViewComponent} from "./books/components/book-view/book-view.component";
 
 
 const routes: Routes = [

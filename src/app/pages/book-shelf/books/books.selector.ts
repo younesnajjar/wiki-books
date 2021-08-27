@@ -27,3 +27,12 @@ export const selectBookOnCreation = createSelector(
   selectBooksState,
   (state) => state.bookOnCreation
 );
+
+export const selectGetBook = createSelector(
+  selectBooksState,
+  (state) => state.selectedItem
+)
+export const selectGetBookState = createSelector(
+  selectBooksState,
+  (state) => state.itemCallState
+)

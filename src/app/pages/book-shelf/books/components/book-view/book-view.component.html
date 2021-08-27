@@ -1,10 +1,10 @@
-<div class="book-container">
+<div class="book-container" *ngIf="book$ | async as book;">
   <p-card class="title-card text-center">
     {{'The beginning After the end' | uppercase}}
   </p-card>
   <div class="info-container mt-4">
     <p-card class="cover-card text-center">
-      <img
+      <img alt=""
         src="https://asuralightnovel.com/wp-content/uploads/2020/04/The-Beginning-After-The-end-asuralightnovel-read-free-webnovel-1-193x278.png"/>
     </p-card>
     <p-card class="details-card">
@@ -21,7 +21,7 @@
             <span>Tag(s)</span>
           </div>
           <div>
-            <div> {{'TURTLEME'}}</div>
+            <div> {{book.title | uppercase}}</div>
             <div> {{'Action, Adventure, Fantasy, Martial arts, Mystery, Romance, Supernatural'}}</div>
             <div> {{'Light Novel'}}</div>
             <div> {{'Action, alchemy, artefact, Demons, Dungeons, Elves, Fantasy, Fight, Guildes, Hot, Light Novel, Magic, Martial Arts, Monster, Novel, Rebirth, Reborn, super powers, Web novel'}}</div>
@@ -32,5 +32,9 @@
 
     </p-card>
   </div>
-
+</div>
+<div *ngIf="getBookState$ | async as getBookState">
+  <div class="mt-5 text-center" *ngIf="getBookState === loadingState.LOADING">
+    loading ...
+  </div>
 </div>

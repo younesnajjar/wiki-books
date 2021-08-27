@@ -8,6 +8,7 @@ export const initialState: BooksState = {
   items: [],
   callState: LoadingState.INIT,
   selectedItem: null,
+  itemCallState: LoadingState.INIT,
   onDeleteItems: [],
   bookOnCreation: false
 }
@@ -46,13 +47,13 @@ const reducer = createReducer(
       onDeleteItems: state.onDeleteItems.filter(itemId => itemId !== id)
     }),
   ),
-  on(booksAction.actionDeleteBookFail, (state, {error, id}) => ({
+  on(booksAction.actionDeleteBookFail, (state, {id}) => ({
       ...state,
       onDeleteItems: state.onDeleteItems.filter(itemId => itemId !== id)
     }),
   ),
 
-  /***** @Add One Book section *****/
+  /***** @Add One Book Creation *****/
   on(booksAction.actionAddBook, (state) => ({
       ...state,
       bookOnCreation: true
@@ -64,25 +65,28 @@ const reducer = createReducer(
       bookOnCreation: false
     }),
   ),
-  on(booksAction.actionAddBookFail, (state, ) => ({
+  on(booksAction.actionAddBookFail, (state,) => ({
       ...state,
       bookOnCreation: false
     }),
   ),
+
+  /***** @Add One Book section *****/
+
   on(booksAction.actionGetBook, (state) => ({
       ...state,
-      bookOnCreation: true
+      itemCallState: LoadingState.LOADING
     }),
   ),
   on(booksAction.actionGetBookSuccess, (state, {book}) => ({
       ...state,
-      items: [...state.items, book],
-      bookOnCreation: false
+      selectedItem: book,
+      itemCallState: LoadingState.LOADED
     }),
   ),
-  on(booksAction.actionGetBookFail, (state, ) => ({
+  on(booksAction.actionGetBookFail, (state, {error}) => ({
       ...state,
-      bookOnCreation: false
+      itemCallState: {errorMsg: error}
     }),
   ),
 )

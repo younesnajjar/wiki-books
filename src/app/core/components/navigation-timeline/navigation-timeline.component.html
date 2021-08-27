@@ -4,13 +4,13 @@
   </div>
   <p-timeline *ngIf="navigationHistoryList$ | async as navigationHistoryList" [value]="navigationHistoryList">
     <ng-template pTemplate="marker" let-item>
-			  <span [pTooltip]="item.name + ' Page'" class="custom-marker p-shadow-2"
+			  <span [routerLink]="item.url" [pTooltip]="item.name + ' Page'" class="custom-marker p-shadow-2 cursor-pointer"
               [style.backgroundColor]="'var(' + item.color + ')'">
                 <i [ngClass]="item.icon"></i>
         </span>
     </ng-template>
     <ng-template pTemplate="content" let-item>
-      <div [ngClass]="{'display-none': !showDetails, 'flex flex-column': showDetails}" class="w-full">
+      <div [routerLink]="item.url"  [ngClass]="{'display-none': !showDetails, 'flex flex-column': showDetails}" class="w-full cursor-pointer">
         <span class="font-bold">{{item.name}} Page</span>
         <span class="font-italic url-text mt-1">{{item.url}}</span>
       </div>

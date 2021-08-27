@@ -9,8 +9,8 @@ import {
   actionAllBooksFail,
   actionAllBooksSuccess, actionDeleteBook,
   actionDeleteBookFail,
-  actionDeleteBookSuccess,
-  actionGetBooks
+  actionDeleteBookSuccess, actionGetBook, actionGetBookFail,
+  actionGetBooks, actionGetBookSuccess
 } from "./books.actions";
 
 import {BooksService} from "../../../shared/services/books/books.service";
@@ -58,6 +58,19 @@ export class BooksEffects {
             mergeMap((returnedBook: Book) => [
               actionAddBookSuccess({book: (returnedBook)})]),
             catchError(error => of(actionAddBookFail({error})))
+          );
+        })
+      )
+  );
+
+  fetchBook = createEffect(
+    () =>
+      this.actions$.pipe(
+        ofType(actionGetBook),
+        switchMap(({id}) => {
+          return this.booksService.getOne(id).pipe(
+            map((book) => actionGetBookSuccess({book})),
+            catchError(error => of(actionGetBookFail({error: error})))
           );
         })
       )

@@ -14,8 +14,9 @@ export interface BooksState {
   items: Book[];
   callState: CallState;
   selectedItem: Book | null;
-  onDeleteItems: number[],
-  bookOnCreation: boolean,
+  itemCallState: CallState;
+  onDeleteItems: number[];
+  bookOnCreation: boolean;
 }
 
 

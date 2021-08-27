@@ -40,9 +40,8 @@
       <ng-template pTemplate="body" let-book>
         <tr>
           <td>{{book.id}}</td>
-          <td>{{book.title}}
-          </td>
-          <td>{{book.author ? book.author.name : 'Unknown'}}</td>
+          <td><span class="cursor-pointer" [routerLink]="['/books',book?.id]">{{book.title}}</span></td>
+          <td><span class="cursor-pointer" [routerLink]="['/authors',book?.author?.id]">{{book.author ? book.author.name : 'Unknown'}}</span></td>
           <td>
             <p-rating [ngModel]="book.rating" [readonly]="true" [cancel]="false"></p-rating>
           </td>
