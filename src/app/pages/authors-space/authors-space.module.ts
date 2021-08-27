@@ -8,21 +8,23 @@ import {AUTHORS_SPACE_FEATURE_NAME, authorsSpaceReducers} from "./authors-space.
 import {EffectsModule} from "@ngrx/effects";
 import {AuthorsEffects} from "./authors/authors.effects";
 import {SharedModule} from "../../shared/shared.module";
+import {SpinnerModule} from "primeng/spinner";
 
 
 @NgModule({
   declarations: [
     AuthorComponent
   ],
-  imports: [
-    CommonModule,
-    AuthorsSpaceRoutingModule,
-    StoreModule.forFeature(AUTHORS_SPACE_FEATURE_NAME, authorsSpaceReducers),
-    EffectsModule.forFeature([
-      AuthorsEffects,
-    ]),
+    imports: [
+        CommonModule,
+        AuthorsSpaceRoutingModule,
+        StoreModule.forFeature(AUTHORS_SPACE_FEATURE_NAME, authorsSpaceReducers),
+        EffectsModule.forFeature([
+            AuthorsEffects,
+        ]),
 
-    SharedModule
-  ]
+        SharedModule,
+        SpinnerModule
+    ]
 })
 export class AuthorsSpaceModule { }

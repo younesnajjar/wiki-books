@@ -1,16 +1,25 @@
-<div class="author-container flex flex-column align-items-center" *ngIf="author$ | async as author">
-
-  <div class="author-pic-container">
-    <img alt="" src="https://www.anime-planet.com/images/people/thumbs/19945.jpg?t=1515110966"/>
-  </div>
-  <span class="font-bold">{{author.name}}</span>
-  <span class="font-italic text-center">"{{author.description}}"</span>
-  <div class="author-books-container flex justify-content-center align-items-stretch flex-wrap">
-    <p-card *ngFor="let book of (authorBooks$ | async)" class="book-card">
-      <div class="flex flex-column">
-        <img [src]="'https://m.media-amazon.com/images/I/41WUb2JBGqL.jpg'" [alt]="book.title"/>
-        <span class="font-bold text-center mt-3">{{book.title}}</span>
+<p-button routerLink=".." label="Return" icon="pi pi-arrow-left" class="return-button"></p-button>
+<ng-container *ngIf="getAuthorState$ | async as getAuthorState">
+  <ng-container *ngIf="getAuthorState === loadingState.LOADED; else loading">
+    <div class="author-container flex flex-column align-items-center" *ngIf="author$ | async as author">
+      <div class="author-pic-container">
+        <img alt="" src="https://www.anime-planet.com/images/people/thumbs/19945.jpg?t=1515110966"/>
       </div>
-    </p-card>
+      <span class="font-bold">{{author.name}}</span>
+      <span class="font-italic text-center">"{{author.description}}"</span>
+      <div class="author-books-container flex justify-content-center align-items-stretch flex-wrap">
+        <p-card *ngFor="let book of (authorBooks$ | async)" class="book-card">
+          <div class="flex flex-column">
+            <img [src]="'https://m.media-amazon.com/images/I/41WUb2JBGqL.jpg'" [alt]="book.title"/>
+            <span class="font-bold text-center mt-3">{{book.title}}</span>
+          </div>
+        </p-card>
+      </div>
+    </div>
+  </ng-container>
+</ng-container>
+<ng-template #loading>
+  <div class="mt-5 text-center">
+    loading...
   </div>
-</div>
+</ng-template>

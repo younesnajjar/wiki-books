@@ -3,12 +3,24 @@
 body {
   margin: 0;
   background: var(--gray-50);
+  background-image: url("assets/images/background.jpg");
 }
 
 .p-card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4) !important;
   transition: 0.3s;
 }
+
 .p-card:hover {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4) !important;
+}
+
+.return-button {
+  position: absolute;
+  top: 3px;
+  left: 10px;
+  opacity: 30%;
+}
+.return-button:hover {
+  opacity: 100%;
 }

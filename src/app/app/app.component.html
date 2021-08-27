@@ -1,8 +1,10 @@
 <p-toast position="bottom-center"></p-toast>
 <div class="flex w-full">
-  <div class="flex-1">
-    <p-tabMenu [model]="items" ></p-tabMenu>
-    <router-outlet></router-outlet>
+  <div class="flex-1 flex flex-column">
+    <p-tabMenu class="shadow-1" [activeItem]="$any(activeItem)" [model]="items" ></p-tabMenu>
+    <div class="route-container overflow-y-scroll flex-1 scrollbar-primary">
+      <router-outlet></router-outlet>
+    </div>
   </div>
   <app-navigation-timeline class="timeline"></app-navigation-timeline>
 </div>

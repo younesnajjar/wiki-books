@@ -1,12 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {select, Store} from "@ngrx/store";
 import {State} from "../../../../book-shelf/book-shelf.state";
 import {Observable} from "rxjs";
 import {Author} from "../../authors.model";
-import {selectAuthor, selectAuthorBooks} from "../../authors.selector";
+import {selectAuthor, selectAuthorBooks, selectAuthorCallState} from "../../authors.selector";
 import {actionGetAuthor, actionGetAuthorBooks} from "../../authors.actions";
 import {ActivatedRoute} from "@angular/router";
 import {Book} from "../../../../book-shelf/books/books.model";
+import {CallState, LoadingStateObject} from "../../../../../shared/models/call-state.model";
 
 @Component({
   selector: 'app-author',
@@ -16,10 +17,14 @@ import {Book} from "../../../../book-shelf/books/books.model";
 export class AuthorComponent implements OnInit {
 
   authorId: string;
+  loadingState = LoadingStateObject;
 
   author$: Observable<Author>
   authorBooks$: Observable<Book[]>
-  constructor(private store: Store<State>, private route: ActivatedRoute) { }
+  getAuthorState$: Observable<CallState>;
+
+  constructor(private store: Store<State>, private route: ActivatedRoute) {
+  }
 
   ngOnInit(): void {
     this.authorId = this.route.snapshot.paramMap.get('id') as string;
@@ -27,6 +32,7 @@ export class AuthorComponent implements OnInit {
     this.store.dispatch(actionGetAuthorBooks({id: this.authorId}));
     this.author$ = this.store.pipe(select(selectAuthor));
     this.authorBooks$ = this.store.pipe(select(selectAuthorBooks));
+    this.getAuthorState$ = this.store.pipe(select(selectAuthorCallState));
   }
 
 }

@@ -1,10 +1,19 @@
-::ng-deep .p-tabmenu-nav {
-  display: flex;
-  justify-content: center;
-}
+@import "../../styles/scroll.styles";
 
+::ng-deep .p-tabmenu {
+  display: flex;
+  background: var(--surface-0);
+  justify-content: center;
+  .p-tabmenu-nav {
+    border: 0;
+  }
+}
 .timeline {
   height: 100vh;
   position: sticky;
   top: 0
+}
+
+.route-container {
+  max-height: calc(100vh - 50px);
 }

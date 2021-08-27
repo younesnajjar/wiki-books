@@ -2,6 +2,7 @@ import {Action, createReducer, on} from "@ngrx/store";
 
 import {NavigationHistoryState} from "./navigation-history.model";
 import {actionStoreNavigation} from "./navigation-history.actions";
+import {NAVIGATION_HISTORY_ITEMS_LIMIT} from "../../../../shared/consts/limits.const";
 
 
 
@@ -14,7 +15,7 @@ const reducer = createReducer(
   initialState,
   on(actionStoreNavigation, (state, {navigationItem}) => ({
       ...state,
-      items: [...state.items, navigationItem]
+      items: [...state.items.slice(-(NAVIGATION_HISTORY_ITEMS_LIMIT - 1)), navigationItem]
     }),
   ),
 )

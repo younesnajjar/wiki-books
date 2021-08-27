@@ -22,7 +22,7 @@
       </div>
 
       <div class="grid col">
-        <div class="p-field col">
+        <div class="p-field col-9">
           <p-dropdown formControlName="author" [options]="$any(authors$ | async)" optionLabel="name" [filter]="true" filterBy="name"
                       placeholder="Select an author">
             <ng-template pTemplate="selectedItem">
@@ -53,12 +53,12 @@
         </small>
       </div>
       <div class="grid col">
-        <div class="col">
+        <div class="col-8">
           <button [disabled]="this.form.invalid" (click)="submit()" pButton class="p-button-info" label="Submit"
                   [icon]="'pi ' +  (( bookOnCreation$ | async) ? 'pi-spin pi-spinner' : 'pi-check')"
                   iconPos="right"></button>
         </div>
-        <div class="col-3">
+        <div class="col-4">
           <button (click)="reset()" pButton label="Reset" icon="pi pi-undo" iconPos="right"></button>
         </div>
       </div>

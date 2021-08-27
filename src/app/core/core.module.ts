@@ -28,6 +28,7 @@ import {HISTORY_FEATURE_NAME, historyReducers} from "./store/history/history.sta
 
 
 import {environment} from "../../environments/environment";
+import {BooksEffects} from "./store/error.effects";
 
 
 @NgModule({
@@ -55,7 +56,8 @@ import {environment} from "../../environments/environment";
     }),
     StoreModule.forFeature(HISTORY_FEATURE_NAME, historyReducers),
     EffectsModule.forRoot([
-      NavigationHistoryEffects
+      NavigationHistoryEffects,
+      BooksEffects
     ]),
     environment.production
       ? []

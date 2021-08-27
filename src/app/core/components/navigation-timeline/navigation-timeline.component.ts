@@ -14,7 +14,7 @@ import {State} from "../../../pages/book-shelf/book-shelf.state";
 export class NavigationTimelineComponent implements OnInit {
 
   navigationHistoryList$: Observable<NavigationHistoryItem[]>;
-  showDetails: boolean = true;
+  showDetails: boolean;
 
   constructor(private store: Store<State>) {
   }

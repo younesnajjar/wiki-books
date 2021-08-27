@@ -1,6 +1,6 @@
-<div [ngClass]="{'checked': showDetails}" class="navigation-timeline-container shadow-2 pt-3 overflow-scroll">
+<div [ngClass]="{'checked': showDetails}" class="navigation-timeline-container shadow-2 pt-3 scrollbar scrollbar-primary">
   <div class="text-center">
-    <p-checkbox class="mb-5" [(ngModel)]="showDetails" pTooltip="Show details" [binary]="true"></p-checkbox>
+    <p-checkbox class="mb-5" [(ngModel)]="showDetails" [pTooltip]="(showDetails ? 'Hide' : 'Show') + ' details'" [binary]="true"></p-checkbox>
   </div>
   <p-timeline *ngIf="navigationHistoryList$ | async as navigationHistoryList" [value]="navigationHistoryList">
     <ng-template pTemplate="marker" let-item>

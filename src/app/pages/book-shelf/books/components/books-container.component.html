@@ -1,5 +1,5 @@
 <p-card *ngIf="(getBooksState$ | async) as getBooksState">
-  <p-table #table *ngIf="books$ | async as books"
+  <p-table class="w-full" #table *ngIf="books$ | async as books"
            [loading]="getBooksState === loadingState.LOADING && books.length === 0" [value]="books" dataKey="id"
            [globalFilterFields]="['title']"
            [rows]="10" [showCurrentPageReport]="true"
@@ -49,6 +49,11 @@
             <app-loadable-button (click)="deleteBook(book)" [loading]="onDeleteBooksIDS.includes(book.id)"
                                  icon="pi pi-trash" class="p-button-rounded p-button-secondary"></app-loadable-button>
           </td>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="emptymessage">
+        <tr>
+          <td colspan="5">{{getBooksState.toString() === getBooksState ? 'No books found.' : 'An error had occurred, please try again'}}</td>
         </tr>
       </ng-template>
     </ng-container>
