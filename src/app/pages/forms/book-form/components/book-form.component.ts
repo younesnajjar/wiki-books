@@ -33,6 +33,7 @@ export class BookFormComponent implements OnInit, OnDestroy {
   form = this.fb.group({
     id: ['', [Validators.required]],
     title: ['', [Validators.required]],
+    coverUrl: [''],
     author: [undefined, [Validators.required, Validators.minLength(7)]],
     description: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(1000)]],
     rating: [0, [Validators.required]]

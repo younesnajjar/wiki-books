@@ -23,16 +23,17 @@
 
       <div class="grid col">
         <div class="p-field col-9">
-          <p-dropdown formControlName="author" [options]="$any(authors$ | async)" optionLabel="name" [filter]="true" filterBy="name"
+          <p-dropdown formControlName="author" [options]="$any(authors$ | async)" optionLabel="fullName" [filter]="true"
+                      filterBy="fullName"
                       placeholder="Select an author">
             <ng-template pTemplate="selectedItem">
               <div class="country-item country-item-value">
-                <div>{{form.controls['author'].value.name}}</div>
+                <div>{{form.controls['author'].value.fullName}}</div>
               </div>
             </ng-template>
             <ng-template let-author pTemplate="item">
               <div class="country-item">
-                <div>{{author.name}}</div>
+                <div>{{author.fullName}}</div>
               </div>
             </ng-template>
           </p-dropdown>
@@ -44,6 +45,10 @@
                          mode="decimal"></p-inputNumber>
           <label for="rating">Rating</label>
         </div>
+      </div>
+      <div class="p-field p-float-label col">
+        <input pInputText id="coverUrl" formControlName="coverUrl" type="text">
+        <label for="title">Cover Url</label>
       </div>
       <div class="p-field p-float-label col">
         <textarea formControlName="description" pInputTextarea id="description"></textarea>
