@@ -1,8 +1,8 @@
 import {ActionReducerMap, createFeatureSelector} from "@ngrx/store";
 
 import {NavigationHistoryState} from "./navigation-history/navigation-history.model";
-import {State} from "../../../pages/book-shelf/book-shelf.state";
 import {NavigationHistoryReducer} from "./navigation-history/navigation-history.reducer";
+import {State} from "../../core.state";
 
 
 

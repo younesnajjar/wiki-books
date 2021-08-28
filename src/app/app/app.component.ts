@@ -1,9 +1,9 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {MenuItem} from "primeng/api";
 import {select, Store} from "@ngrx/store";
-import {State} from "../pages/book-shelf/book-shelf.state";
 import {selectUrl} from "../core/routes/router.selectors";
 import {Observable, Subscription} from "rxjs";
+import {State} from "../core/core.state";
 
 @Component({
   selector: 'app-root',

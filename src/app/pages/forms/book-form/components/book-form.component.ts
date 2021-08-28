@@ -4,7 +4,6 @@ import {select, Store} from "@ngrx/store";
 import {Observable, Subscription} from "rxjs";
 import {debounceTime, take} from "rxjs/operators";
 
-import {State} from "../../../book-shelf/book-shelf.state";
 import {actionFormReset, actionFormUpdate, actionGetBookExistence} from "../form.actions";
 import {selectBookExistence, selectFormState} from "../form.selectors";
 import {Form} from "../form.model";
@@ -13,6 +12,7 @@ import {selectBookOnCreation} from "../../../book-shelf/books/books.selector";
 import {actionAllAuthors} from "../../../authors-space/authors/authors.actions";
 import {Author} from "../../../authors-space/authors/authors.model";
 import {selectAuthors} from "../../../authors-space/authors/authors.selector";
+import {State} from "../../../../core/core.state";
 
 @Component({
   selector: 'app-book-form',

@@ -12,17 +12,6 @@
       "tags": "Adventure|Documentary"
     },
     {
-      "id": 2,
-      "title": "Skies Above the Landscape (Nebo iznad krajolika)",
-      "authorId": 5,
-      "description": "justo maecenas rhoncus aliquam lacus morbi quis tortor id nulla ultrices aliquet maecenas leo odio condimentum id luctus nec molestie sed justo pellentesque viverra pede ac diam cras pellentesque volutpat dui maecenas tristique est et tempus semper est quam pharetra magna ac consequat metus sapien",
-      "rating": 3,
-      "coverUrl": "https://img.wattpad.com/cover/265407849-352-k926550.jpg",
-      "genres": "Comedy",
-      "type": "Light Novel",
-      "tags": "Horror|Mystery"
-    },
-    {
       "id": 3,
       "title": "Drifting Clouds (Kauas pilvet karkaavat)",
       "authorId": 3,
@@ -32,17 +21,6 @@
       "genres": "Comedy|Drama",
       "type": "Light Novel",
       "tags": "Comedy|Drama"
-    },
-    {
-      "id": 4,
-      "title": "Rachel Getting Married",
-      "authorId": 3,
-      "description": "sem mauris laoreet ut rhoncus aliquet pulvinar sed nisl nunc",
-      "rating": 2,
-      "coverUrl": "https://d30womf5coomej.cloudfront.net/sa/69/3b1124c5-f877-4e3b-9e24-0ad3932c7922_z.jpg",
-      "genres": "Drama|Romance",
-      "type": "Light Novel",
-      "tags": "Documentary"
     },
     {
       "id": 5,
@@ -56,17 +34,6 @@
       "tags": "Comedy"
     },
     {
-      "id": 6,
-      "title": "Beverly Hills Cop",
-      "authorId": 1,
-      "description": "erat fermentum justo nec condimentum neque sapien placerat ante nulla justo aliquam quis turpis eget elit sodales scelerisque mauris sit amet eros suspendisse accumsan tortor quis turpis sed ante vivamus tortor duis mattis egestas metus",
-      "rating": 4,
-      "coverUrl": "https://img.wattpad.com/cover/275152614-352-k747856.jpg",
-      "genres": "Action|Comedy|Crime|Drama",
-      "type": "Light Novel",
-      "tags": "Comedy|Romance"
-    },
-    {
       "id": 7,
       "title": "Robot Monster",
       "authorId": 5,
@@ -76,39 +43,6 @@
       "genres": "Horror|Sci-Fi",
       "type": "Light Novel",
       "tags": "Action|Adventure|Sci-Fi|Thriller"
-    },
-    {
-      "id": 8,
-      "title": "Gregory Crewdson: Brief Encounters",
-      "authorId": 10,
-      "description": "odio justo sollicitudin ut suscipit a feugiat et eros vestibulum ac est lacinia nisi venenatis tristique fusce congue diam id ornare imperdiet sapien urna pretium nisl ut volutpat sapien arcu sed augue aliquam erat volutpat in congue etiam justo etiam pretium iaculis justo in hac habitasse platea dictumst etiam faucibus cursus urna ut tellus nulla ut erat id mauris vulputate elementum nullam varius nulla facilisi cras non velit nec nisi vulputate nonummy maecenas tincidunt lacus at velit vivamus vel nulla eget eros elementum pellentesque quisque porta",
-      "rating": 5,
-      "coverUrl": "https://www.manga-raw.club/media/manga_covers/1_9MJ9f3I.jpg",
-      "genres": "Documentary|Drama",
-      "type": "Light Novel",
-      "tags": "Crime|Thriller"
-    },
-    {
-      "id": 9,
-      "title": "'Twas the Night Before Christmas",
-      "authorId": 1,
-      "description": "massa id lobortis convallis tortor risus dapibus augue vel accumsan tellus nisi eu orci mauris lacinia sapien quis libero nullam sit amet turpis elementum ligula vehicula consequat morbi a ipsum integer a nibh in quis justo maecenas rhoncus aliquam lacus morbi quis tortor id nulla ultrices aliquet maecenas leo odio condimentum id luctus nec molestie sed justo pellentesque viverra pede ac diam cras pellentesque volutpat dui maecenas tristique est et tempus semper est quam pharetra magna ac consequat metus sapien ut nunc vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae mauris viverra",
-      "rating": 4,
-      "coverUrl": "https://img.wattpad.com/cover/265407849-352-k926550.jpg",
-      "genres": "Animation|Children|Fantasy",
-      "type": "Light Novel",
-      "tags": "Action|Sci-Fi"
-    },
-    {
-      "id": 10,
-      "title": "Kenny",
-      "authorId": 4,
-      "description": "odio cras mi pede malesuada in imperdiet et commodo vulputate justo in blandit ultrices enim lorem ipsum dolor sit amet consectetuer adipiscing elit proin interdum mauris non ligula pellentesque ultrices phasellus id sapien in sapien iaculis",
-      "rating": 5,
-      "coverUrl": "https://www.manga-raw.club/media/manga_covers/1_9MJ9f3I.jpg",
-      "genres": "Comedy",
-      "type": "Light Novel",
-      "tags": "Horror"
     },
     {
       "id": 11,

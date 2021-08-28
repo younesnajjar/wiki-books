@@ -3,7 +3,7 @@ import {ActionReducerMap, createFeatureSelector} from "@ngrx/store";
 
 import {AuthorsState} from "./authors/authors.model";
 import {authorsReducer} from "./authors/authors.reducer";
-import {State} from "../book-shelf/book-shelf.state";
+import {State} from "../../core/core.state";
 
 export const AUTHORS_SPACE_FEATURE_NAME = 'authorsSpace';
 export const selectAuthorsSpace =

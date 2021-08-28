@@ -3,7 +3,6 @@ import {select, Store} from "@ngrx/store";
 import {ActivatedRoute} from "@angular/router";
 
 
-import {State} from "../../../book-shelf.state";
 import {actionGetBook} from "../../books.actions";
 import {
   selectGetBook,
@@ -12,6 +11,7 @@ import {
 import {Observable} from "rxjs";
 import {Book} from "../../books.model";
 import {CallState, LoadingStateObject} from "../../../../../shared/models/call-state.model";
+import {State} from "../../../../../core/core.state";
 
 @Component({
   selector: 'app-book-view',

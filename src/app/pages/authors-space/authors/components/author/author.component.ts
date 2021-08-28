@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 import {select, Store} from "@ngrx/store";
-import {State} from "../../../../book-shelf/book-shelf.state";
 import {Observable} from "rxjs";
 import {Author} from "../../authors.model";
 import {selectAuthor, selectAuthorBooks, selectAuthorCallState} from "../../authors.selector";
@@ -8,6 +7,7 @@ import {actionGetAuthor, actionGetAuthorBooks} from "../../authors.actions";
 import {ActivatedRoute} from "@angular/router";
 import {Book} from "../../../../book-shelf/books/books.model";
 import {CallState, LoadingStateObject} from "../../../../../shared/models/call-state.model";
+import {State} from "../../../../../core/core.state";
 
 @Component({
   selector: 'app-author',

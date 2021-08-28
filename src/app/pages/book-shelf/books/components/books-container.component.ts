@@ -2,11 +2,11 @@ import {Component, OnInit} from '@angular/core';
 import {select, Store} from "@ngrx/store";
 import {Observable} from "rxjs";
 
-import {State} from "../../book-shelf.state";
 import {Book} from "../books.model";
 import {selectBooks, selectGetBooksState, selectOnDeleteBooks} from "../books.selector";
 import {actionDeleteBook, actionGetBooks} from "../books.actions";
 import {CallState, LoadingStateObject} from "../../../../shared/models/call-state.model";
+import {State} from "../../../../core/core.state";
 
 @Component({
   selector: 'app-books',

@@ -4,7 +4,7 @@ import {Observable} from "rxjs";
 
 import {NavigationHistoryItem} from "../../store/history/navigation-history/navigation-history.model";
 import {selectNavigationHistoryList} from "../../store/history/history.selector";
-import {State} from "../../../pages/book-shelf/book-shelf.state";
+import {State} from "../../core.state";
 
 @Component({
   selector: 'app-navigation-timeline',
