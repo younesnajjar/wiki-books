@@ -2,7 +2,7 @@
   <ng-container *ngIf="bookState === loadingState.LOADED; else loading">
     <div class="book-container" *ngIf="book$ | async as book;">
       <p-card class="title-card text-center">
-        {{'The beginning After the end' | uppercase}}
+        {{ book.title | uppercase}}
       </p-card>
       <div class="info-container mt-4 flex-column align-items-center lg:flex-row">
         <p-card class="cover-card text-center">
@@ -23,7 +23,7 @@
                 <span>Genres(s)</span>
               </div>
               <div>
-                <div> {{book.title | uppercase}}</div>
+                <div> {{book.author.fullName | uppercase}}</div>
                 <div> {{book.description}}</div>
                 <div> {{book.type? book.type : 'Light Novel'}}</div>
                 <div> {{'Action, Adventure, Fantasy, Martial arts, Mystery, Romance, Supernatural'}}</div>
