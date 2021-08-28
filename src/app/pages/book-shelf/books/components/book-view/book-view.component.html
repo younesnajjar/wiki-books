@@ -1,4 +1,3 @@
-<p-button routerLink=".." label="Return" icon="pi pi-arrow-left" class="return-button"></p-button>
 <ng-container *ngIf="getBookState$ | async as bookState">
   <ng-container *ngIf="bookState === loadingState.LOADED; else loading">
     <div class="book-container" *ngIf="book$ | async as book;">

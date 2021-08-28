@@ -1,8 +1,10 @@
 .cards-container {
   gap: 20px;
+  overflow-x: scroll;
+
   p-card{
     opacity: 60%;
-    width: 350px;
+    width: 330px;
     ::ng-deep .p-card-body {
       height: 230px;
     }

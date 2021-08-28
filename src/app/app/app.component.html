@@ -1,10 +1,16 @@
 <p-toast position="bottom-center"></p-toast>
 <div class="flex w-full">
   <div class="flex-1 flex flex-column">
-    <p-tabMenu class="shadow-1" [activeItem]="$any(activeItem)" [model]="items" ></p-tabMenu>
+    <p-button *ngIf="!activeItem" routerLink="/books" icon="pi pi-arrow-left" class="return-button ss:d-opacity-100"></p-button>
+
+    <div class="bg-primary bs:d-none">
+      <button style="float: right" type="button" pButton pRipple icon="pi pi-bars" (click)="menu.toggle($event)"></button>
+    </div>
+    <p-menu #menu [popup]="true" [model]="items"></p-menu>
+    <p-tabMenu class="shadow-1 ss:d-none" [activeItem]="$any(activeItem)" [model]="items" ></p-tabMenu>
     <div class="route-container overflow-y-scroll flex-1 scrollbar-primary">
       <router-outlet></router-outlet>
     </div>
   </div>
-  <app-navigation-timeline class="timeline"></app-navigation-timeline>
+  <app-navigation-timeline class="timeline xs:d-none"></app-navigation-timeline>
 </div>

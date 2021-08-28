@@ -4,10 +4,12 @@
   display: flex;
   background: var(--surface-0);
   justify-content: center;
+
   .p-tabmenu-nav {
     border: 0;
   }
 }
+
 .timeline {
   height: 100vh;
   position: sticky;
@@ -17,3 +19,5 @@
 .route-container {
   max-height: calc(100vh - 50px);
 }
+
+

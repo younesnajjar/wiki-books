@@ -17,10 +17,10 @@
           </div>
         </div>
 
-        <div class="flex justify-content-end flex-1 justify-content-center sm:justify-content-end">
+        <div class="flex justify-content-end flex-1 justify-content-center sm:justify-content-end ">
 			<span class="p-input-icon-left p-ml-auto">
-                <i class="pi pi-search"></i>
-                <input pInputText type="text" (input)="table.filterGlobal($any($event.target).value, 'contains')"
+                <i class="pi pi-search xs:d-none"></i>
+                <input class="xs:d-none" pInputText type="text" (input)="table.filterGlobal($any($event.target).value, 'contains')"
                        placeholder="Search keyword"/>
             </span>
         </div>
@@ -38,7 +38,7 @@
     </ng-template>
     <ng-container *ngIf="(onDeleteBooksIDs$ | async) as onDeleteBooksIDS">
       <ng-template pTemplate="body" let-book>
-        <tr class="table-body-tr">
+        <tr class="tss:table-body-tr">
           <td><div>{{book.id}}</div></td>
           <td><span class="cursor-pointer" [routerLink]="['/books',book?.id]">{{book.title}}</span></td>
           <td><span class="cursor-pointer"

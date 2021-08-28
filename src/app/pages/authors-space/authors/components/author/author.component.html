@@ -1,4 +1,3 @@
-<p-button routerLink="/books" label="Return" icon="pi pi-arrow-left" class="return-button"></p-button>
 <ng-container *ngIf="getAuthorState$ | async as getAuthorState">
   <ng-container *ngIf="getAuthorState === loadingState.LOADED; else loading">
     <div class="author-container flex flex-column align-items-center" *ngIf="author$ | async as author">

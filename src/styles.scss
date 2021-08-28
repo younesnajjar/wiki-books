@@ -2,6 +2,8 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
+@import "variables";
+
 *{
   font-family: "Poppins", Arial, Helvetica, sans-serif;
 }
@@ -23,8 +25,6 @@ body {
 
 .return-button {
   position: absolute;
-  top: 3px;
-  left: 10px;
   opacity: 30%;
 }
 .return-button:hover {
@@ -37,4 +37,48 @@ body {
 
 .dis-flex {
   display: inline-block;
+}
+
+
+@media only screen and (max-width: $b) {
+
+  .tss\:table-body-tr {
+    td {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    td:first-child {
+      display: none !important;
+    }
+  }
+}
+
+@media only screen and (min-width: $s) {
+  .bs\:d-none {
+    display: none;
+  }
+  .bs\:justify-content-end {
+    justify-content: flex-end !important;
+  }
+  .bs\:max-w-full {
+    max-width: 100% !important;
+  }
+}
+
+@media only screen and (max-width: $s) {
+  .ss\:d-none {
+    display: none;
+  }
+  .ss\:d-opacity-100 {
+    opacity: 100% !important;
+  }
+}
+
+@media only screen and (max-width: $xs) {
+  .xs\:d-none {
+    display: none;
+    width: 0;
+    overflow: hidden;
+  }
 }
