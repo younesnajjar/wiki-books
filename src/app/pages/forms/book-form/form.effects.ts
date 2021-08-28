@@ -7,7 +7,6 @@ import {catchError, map, switchMap} from "rxjs/operators";
 import {actionBookExistence, actionGetBookExistence} from "./form.actions";
 import {BooksService} from "../../../shared/services/books/books.service";
 
-export const FORM_KEY = 'WIKI.BOOKS.FORM';
 
 @Injectable()
 export class FormEffects {

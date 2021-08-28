@@ -18,7 +18,7 @@
           <input pInputText id="title" formControlName="title" type="text">
           <label for="title">Title</label>
           <small class="p-error"
-                 *ngIf="!form.controls['title'].valid && form.controls['title'].dirty">Required</small>
+                 *ngIf="!form.controls['title'].valid && form.controls['title'].dirty">Must have at least 7 characters</small>
         </span>
         </div>
 

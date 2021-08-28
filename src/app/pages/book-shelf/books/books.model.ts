@@ -9,6 +9,9 @@ export interface Book {
   authorId: number;
   author: Author;
   coverUrl: string;
+  rating: number;
+  genres: string;
+  type: string
 }
 
 export interface BooksState {

@@ -13,20 +13,20 @@
           <div class="ml-5">
             <div class="flex align-items-center mb-5">
               <p-rating class="mr-2" [ngModel]="5" [readonly]="true" [cancel]="false"></p-rating>
-              (5)
+              ({{book.rating}})
             </div>
             <div class="details-lines">
               <div>
                 <span>Author(s)</span>
-                <span>Genre(s)</span>
+                <span>Description</span>
                 <span>Type</span>
-                <span>Tag(s)</span>
+                <span>Genres(s)</span>
               </div>
               <div>
                 <div> {{book.title | uppercase}}</div>
+                <div> {{book.description}}</div>
+                <div> {{book.type? book.type : 'Light Novel'}}</div>
                 <div> {{'Action, Adventure, Fantasy, Martial arts, Mystery, Romance, Supernatural'}}</div>
-                <div> {{'Light Novel'}}</div>
-                <div> {{'Action, alchemy, artefact, Demons, Dungeons, Elves, Fantasy, Fight, Guildes, Hot, Light Novel, Magic, Martial Arts, Monster, Novel, Rebirth, Reborn, super powers, Web novel'}}</div>
               </div>
 
             </div>

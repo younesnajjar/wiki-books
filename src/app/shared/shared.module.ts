@@ -16,6 +16,7 @@ import {InputTextareaModule} from "primeng/inputtextarea";
 import {DropdownModule} from "primeng/dropdown";
 import {InputNumberModule} from "primeng/inputnumber";
 import {AuthorsService} from "./services/authors/authors.service";
+import {SpinnerModule} from "primeng/spinner";
 
 
 @NgModule({
@@ -37,6 +38,7 @@ import {AuthorsService} from "./services/authors/authors.service";
     InputTextareaModule,
     DropdownModule,
     InputNumberModule,
+    SpinnerModule
   ],
   exports: [
     // angular

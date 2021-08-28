@@ -2,25 +2,23 @@ import {NgModule, Optional, SkipSelf} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {HttpClientModule} from "@angular/common/http";
 import {FormsModule} from "@angular/forms";
+import {RouterModule} from "@angular/router";
 
 
 import {StoreModule} from "@ngrx/store";
 import {StoreDevtoolsModule} from "@ngrx/store-devtools";
+import {EffectsModule} from "@ngrx/effects";
+import {routerReducer, StoreRouterConnectingModule} from "@ngrx/router-store";
 
 import {TabMenuModule} from 'primeng/tabmenu';
 import {ToastModule} from 'primeng/toast';
 import {MessageService} from "primeng/api";
-import {MenubarModule} from "primeng/menubar";
 import {CheckboxModule} from "primeng/checkbox";
 import {TimelineModule} from "primeng/timeline";
 import {CardModule} from "primeng/card";
 import {ButtonModule} from "primeng/button";
 
 
-
-import {RouterModule} from "@angular/router";
-import {EffectsModule} from "@ngrx/effects";
-import {routerReducer, StoreRouterConnectingModule} from "@ngrx/router-store";
 
 import { NavigationTimelineComponent } from './components/navigation-timeline/navigation-timeline.component';
 import {NavigationHistoryEffects} from "./store/history/navigation-history/navigation-history.effects";
@@ -78,7 +76,6 @@ import {NavigationService} from "./services/navigation.service";
     // primeng
     ToastModule,
     TabMenuModule,
-    MenubarModule,
     NavigationTimelineComponent,
     BackButtonDirective
   ]
