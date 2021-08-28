@@ -1,7 +1,7 @@
 <p-toast position="bottom-center"></p-toast>
 <div class="flex w-full">
   <div class="flex-1 flex flex-column">
-    <p-button *ngIf="!activeItem" routerLink="/books" icon="pi pi-arrow-left" class="return-button ss:d-opacity-100"></p-button>
+    <p-button *ngIf="!activeItem || (url && url.split('/')[2] == 'form')" backButton icon="pi pi-arrow-left" class="return-button ss:d-opacity-100"></p-button>
 
     <div class="bg-primary bs:d-none">
       <button style="float: right" type="button" pButton pRipple icon="pi pi-bars" (click)="menu.toggle($event)"></button>

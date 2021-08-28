@@ -14,6 +14,7 @@ export class AppComponent implements OnInit, OnDestroy {
 
   public items: MenuItem[];
   public activeItem: MenuItem | undefined;
+  public url: string;
 
   public currentFeature$: Observable<string>
 
@@ -31,6 +32,7 @@ export class AppComponent implements OnInit, OnDestroy {
     this.currentFeature$ = this.store.pipe(select(selectUrl));
     this.currentFeatureSubscription = this.currentFeature$.subscribe((url) => {
       if (url) {
+        this.url = url;
         this.setActiveItem(url);
       }
     });

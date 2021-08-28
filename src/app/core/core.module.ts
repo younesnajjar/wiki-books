@@ -29,11 +29,14 @@ import {HISTORY_FEATURE_NAME, historyReducers} from "./store/history/history.sta
 
 import {environment} from "../../environments/environment";
 import {BooksEffects} from "./store/error.effects";
+import {BackButtonDirective} from "./directives/back.directive";
+import {NavigationService} from "./services/navigation.service";
 
 
 @NgModule({
   declarations: [
-    NavigationTimelineComponent
+    NavigationTimelineComponent,
+    BackButtonDirective
   ],
   imports: [
     // angular
@@ -69,14 +72,15 @@ import {BooksEffects} from "./store/error.effects";
       routerState: 1
     }),
   ],
-  providers: [MessageService],
+  providers: [MessageService, NavigationService],
   exports: [
 
     // primeng
     ToastModule,
     TabMenuModule,
     MenubarModule,
-    NavigationTimelineComponent
+    NavigationTimelineComponent,
+    BackButtonDirective
   ]
 })
 export class CoreModule {

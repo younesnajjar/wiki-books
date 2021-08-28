@@ -39,7 +39,7 @@
     <ng-container *ngIf="(onDeleteBooksIDs$ | async) as onDeleteBooksIDS">
       <ng-template pTemplate="body" let-book>
         <tr class="tss:table-body-tr">
-          <td><div>{{book.id}}</div></td>
+          <td><div class="cursor-pointer" [routerLink]="['/books',book?.id]">{{book.id}}</div></td>
           <td><span class="cursor-pointer" [routerLink]="['/books',book?.id]">{{book.title}}</span></td>
           <td><span class="cursor-pointer"
                     [routerLink]="['/authors',book?.author?.id]">{{book.author ? book.author.fullName : 'Unknown'}}</span>

@@ -1,9 +1,9 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
 
 import {BooksService} from "./services/books/books.service";
 
-import { LoadableButtonComponent } from './components/loadable-button/loadable-button.component';
+import {LoadableButtonComponent} from './components/loadable-button/loadable-button.component';
 
 import {TableModule} from "primeng/table";
 import {ButtonModule} from "primeng/button";
@@ -16,7 +16,6 @@ import {InputTextareaModule} from "primeng/inputtextarea";
 import {DropdownModule} from "primeng/dropdown";
 import {InputNumberModule} from "primeng/inputnumber";
 import {AuthorsService} from "./services/authors/authors.service";
-
 
 
 @NgModule({
@@ -65,4 +64,5 @@ import {AuthorsService} from "./services/authors/authors.service";
     AuthorsService
   ]
 })
-export class SharedModule { }
+export class SharedModule {
+}
